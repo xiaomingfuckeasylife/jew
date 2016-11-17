@@ -1,0 +1,4 @@
+jdbcUrl = jdbc:mysql://localhost/forum?autoReconnect=true&useSSL=false
+user = root
+password =123456
+devMode = true
