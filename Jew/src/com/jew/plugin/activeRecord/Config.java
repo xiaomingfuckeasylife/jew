@@ -27,12 +27,12 @@ public class Config {
 	private String name;
 	private DataSource dataSource;
 	
-	private Dialect dialect;
+	Dialect dialect;
 	private Boolean showSql;
 	private Boolean devMod;
 	private Integer transactionLever;
 	
-	private IContainerFactory containerFactory;
+	IContainerFactory containerFactory;
 	private ICache cache;
 	
 	public Config(String name, DataSource dataSource, Dialect dialect, Boolean showSql, Boolean devMod,

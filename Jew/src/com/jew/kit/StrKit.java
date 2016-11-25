@@ -45,4 +45,11 @@ public class StrKit {
 		return str == null || str.trim().equals("");
 	}
 	
+	public static String removeLastChar(String str){
+		return str.substring(0, str.length()-1);
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(removeLastChar("asdfafd"));
+	}
 }

@@ -70,4 +70,27 @@ public class CacheKit {
 		getOrAddIfAbsence(name).put(new Element(key,value));;
 	}
 	
+	public <T> T get(String name , String key , IDataLoader dataLoader){
+		Cache cache = cacheManager.getCache(name);
+		if(cache != null){
+			return (T) cache.get("key");
+		}else{
+			T t = dataLoader.load(key);
+			cache.put(new Element(key,t));
+			return t;
+		}
+	}
+	
+	public <T> T get(String name ,String key,Class<? extends IDataLoader> dataLoaderClazz) throws InstantiationException, IllegalAccessException{
+		return get(name, key, dataLoaderClazz.newInstance());
+	}
+	
+	public Cache get(String name,IDataLoader dataLoader){
+		Cache cache = cacheManager.getCache(name);
+		if(cache == null){
+			cache = dataLoader.load();
+		}
+		return cache;
+	}
+	
 }
