@@ -7,7 +7,7 @@ import java.io.IOException;
 import com.jew.log.Log;
 
 /**
- * FileKit
+ * FileKit 
  */
 public class FileKit {
 	

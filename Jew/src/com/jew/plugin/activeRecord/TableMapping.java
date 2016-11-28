@@ -12,10 +12,16 @@ public final class TableMapping {
 	
 	private Map<Class<? extends Model<?>>,Table> modelToTableMap = new HashMap<>();
 	
+	
+	
 	private TableMapping(){}
 	
 	public Table getTable(Class<? extends Model<?>> clazz){
 		return modelToTableMap.get(clazz);
+	}
+	
+	public void putTable(Table table){
+		modelToTableMap.put(table.getModelClass(), table);
 	}
 	
 	public void addModelToTable(Class<? extends Model<?>> clazz,Table table){

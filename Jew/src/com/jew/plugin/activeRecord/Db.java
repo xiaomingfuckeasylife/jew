@@ -8,4 +8,8 @@ public class Db {
 		
 		return 0;
 	}
+	
+	public static void init(){
+		
+	}
 }
