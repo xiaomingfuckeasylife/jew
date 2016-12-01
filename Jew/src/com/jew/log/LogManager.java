@@ -15,7 +15,7 @@ public class LogManager {
 	
 	private LogManager(){}
 	
-	public void setDefaultLogFactory(ILogFactory defaultLogFactory) throws Exception{
+	public void setDefaultLogFactory(ILogFactory defaultLogFactory){
 		Log.setDefaultLogFactory(defaultLogFactory);
 		LogKit.synchronizeLog();
 	}

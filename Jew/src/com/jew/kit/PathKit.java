@@ -56,7 +56,7 @@ public class PathKit {
 	 * @return
 	 * @throws IOException
 	 */
-	public static String getWebRootPath() throws IOException{
+	public static String getWebRootPath() {
 		if(webRootPath == null){
 			webRootPath = detectWebRootPath();
 		}
@@ -72,9 +72,13 @@ public class PathKit {
 	 * @return
 	 * @throws IOException
 	 */
-	private static String detectWebRootPath() throws IOException{
+	private static String detectWebRootPath(){
 		String path = PathKit.class.getResource("/").getPath();
-		return new File(path).getParentFile().getParentFile().getCanonicalPath();
+		try {
+			return new File(path).getParentFile().getParentFile().getCanonicalPath();
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
 	}
 	
 	public static boolean isAbsolutePath(String path){

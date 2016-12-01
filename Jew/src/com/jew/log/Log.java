@@ -38,12 +38,12 @@ public abstract class Log {
 		}
 	}
 	
-	public static void setDefaultLogFactory(ILogFactory defaultLogFactory) throws Exception{
+	public static void setDefaultLogFactory(ILogFactory defaultLogFactory){
 		/**
 		 * check the value 
 		 */
 		if(defaultLogFactory == null){
-			throw new Exception("defaultLogFacotry can not be null");
+			throw new IllegalArgumentException("defaultLogFacotry can not be null");
 		}
 		defaultFactory = defaultLogFactory;
 	}
